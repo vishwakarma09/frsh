@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>onsen testing</title>
+	
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/onsenui.min.js"></script>
+
+	<link rel="stylesheet" href="css/onsenui.css">
+	<link rel="stylesheet" href="css/onsen-css-components.css">
+	<!--
+	<link rel="stylesheet" href="resource/bootstrap.min.css">
+	<script src="resource/bootstrap.min.js"></script>
+	-->
+	<!--
+	<script src="cordova.js"></script>
+	-->
+	<script src="js/jquery.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+			alert('hello world');
+	});
+	
+	function sayhi(){
+		alert('hi');	
+	}
+	</script>
+	</head>
+<body onload="sayhi()">
+	
+	<script>
+		ons.bootstrap();
+	</script>
+<ons-sliding-menu
+	  main-page="home.html"
+	  menu-page="menu.html"       
+	  side="left"
+	  max-slide-distance="250px"
+	  var="menu">
+</ons-sliding-menu>
+
+<ons-template id="home.html">
+	<ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Home</div>
+    </ons-toolbar>
+
+    <p style="text-align: center; color: #999; padding-top: 100px;">Page1 Contents</p>
+  </ons-page>
+</ons-template>
+
+
+<ons-template id="food-menu.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Food menu</div>
+    </ons-toolbar>
+
+    <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
+  </ons-page>
+</ons-template>
+
+<ons-template id="order-history.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()"><ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Order history</div>
+    </ons-toolbar>
+
+    <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
+  </ons-page>
+</ons-template>
+
+<ons-template id="menu.html">
+  <ons-list>
+  <ons-list-item modifier="chevron" onclick="menu.setMainPage('page1.html', {closeMenu: true})">
+      <div class="container-fluid" style="background-image: url(img/menubar-image.PNG); width:299px; height: 128px;">
+			<font color="white">Guest <br>0 points</font>
+	  </div>
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('home.html', {closeMenu: true})">
+      Home
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('food-menu.html', {closeMenu: true})">
+      Food Menu
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('order-history.html', {closeMenu: true})">
+      Order history
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('my-locations.html', {closeMenu: true})">
+      My locations
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setMainPage('notifications.html', {closeMenu: true})">
+      Notifications
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setMainPage('health-blog.html', {closeMenu: true})">
+      Health Blog
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('feedback.html', {closeMenu: true})">
+      Give Feedback
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('register.html', {closeMenu: true})">
+      Register
+    </ons-list-item>
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('login.html', {closeMenu: true})">
+      Login
+    </ons-list-item>
+  </ons-list>
+</ons-template>
+
+</body>
+</html>
